@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Week1Daily3</string>
+    <string name="user_name">Name: Ricardo Lopez</string>
+    <string name="user_location">Location: Atlanta,GA</string>
+    <string name="user_education">Education: Bachelor's Degree in Computer Science</string>
+    <string name="user_hobbies">Hobbies: Soccer, Videogames, Movies, Reading</string>
+</resources>
