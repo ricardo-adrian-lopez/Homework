@@ -32,7 +32,15 @@ public class Calculator {
 
     @Override
     public String toString() {
-        if(numberOne==null || numberOne==0){
+        if((numberOne==null || numberOne==0) && (operand!=null && !"".equals(operand)) && (numberTwo==null || numberTwo==0 )){
+            return String.format("%.0f",numberOne)+operand+String.format("%.0f",numberTwo);
+        }else if((numberOne==null || numberOne==0) && (operand!=null && !"".equals(operand)) && (numberTwo!=0 )){
+            return String.format("%.0f",numberOne)+operand+String.format("%.0f",numberTwo);
+        }
+        else if( (numberOne==null || numberOne==0) && (operand!=null && !"".equals(operand))){
+            return String.format("%.0f",numberOne)+operand;
+        }
+        else if(numberOne==null || numberOne==0){
             return "0";
         }else if( (operand==null || "".equals(operand))  && (numberTwo==null || numberTwo == 0)){
             return String.format("%.0f",numberOne);
@@ -44,12 +52,19 @@ public class Calculator {
     }
 
     public String getResult(){
-        if( (numberOne!=null) && (operand!=null && !"".equals(operand)) && (numberTwo!=null && numberTwo!=null)){
+        if( (numberOne!=null) && (operand!=null && !"".equals(operand)) && (numberTwo!=null && numberTwo!=0)){
             switch (operand){
                 case "x": return String.valueOf(numberOne*numberTwo);
                 case "-": return String.valueOf(numberOne-numberTwo);
                 case "+": return String.valueOf(numberOne+numberTwo);
                 case "/": return String.valueOf(numberOne/numberTwo);
+                default:return "0";
+            }
+        }else if((numberOne!=null) && (operand!=null && !"".equals(operand))){
+            switch (operand){
+                case "PI": return String.valueOf(numberOne*Math.PI);
+                case "^2": return String.valueOf(Math.pow(numberOne,2));
+                case "^3": return String.valueOf(Math.pow(numberOne,3));
                 default:return "0";
             }
         }else {

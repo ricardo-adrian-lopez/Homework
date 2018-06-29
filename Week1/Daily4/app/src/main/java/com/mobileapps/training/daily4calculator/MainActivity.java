@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         numberTwo = "0";
         calculator = new Calculator();
         operand = "";
-        result="";
+        result = "";
         showOnScreen(calculator.toString());
     }
 
