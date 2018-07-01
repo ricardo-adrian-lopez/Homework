@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Weekend</string>
+    <string name="nav_home">Principal</string>
+    <string name="nav_characters">Characters</string>
 </resources>
