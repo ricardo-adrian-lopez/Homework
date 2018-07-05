@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_characters"
+            android:icon="@drawable/ic_portrait_black_24dp"
+            android:title="@string/nav_characters"/>
+
+        <item
+            android:id="@+id/nav_games"
+            android:icon="@drawable/ic_videogame_asset_black_24dp"
+            android:title="Videogames"/>
+    </group>
+
+</menu>
