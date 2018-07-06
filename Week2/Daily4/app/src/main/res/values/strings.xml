@@ -9,4 +9,10 @@
     <string name="nav_drawer_closed">drawer closed</string>
     <string name="btn_picture">Take picture...</string>
     <string name="btn_add_event">Add event...</string>
+    <string name="add_person_firstname">Enter firstname</string>
+    <string name="add_person_lastname">Enter lastname</string>
+    <string name="add_person_company">Enter company name</string>
+    <string name="add_person_save">Save person</string>
+    <string name="add_person_show">Show list</string>
+    <string name="list_person_back">Back to add person</string>
 </resources>

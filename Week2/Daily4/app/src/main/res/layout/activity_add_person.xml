@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddPerson">
+
+    <EditText
+        android:id="@+id/editTextFirstname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/add_person_firstname"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextLastname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/add_person_lastname"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextCompany"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/add_person_company"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnAddPerson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_person_save" />
+
+    <Button
+        android:id="@+id/btnListPerson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_person_show" />
+</LinearLayout>

@@ -30,8 +30,17 @@
             android:name=".CallNumber"
             android:label="Call a number"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ShareString"
+        <activity
+            android:name=".ShareString"
             android:label="Share String"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddPerson"
+            android:label="Add person"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ListPerson"
+            android:label="List person"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

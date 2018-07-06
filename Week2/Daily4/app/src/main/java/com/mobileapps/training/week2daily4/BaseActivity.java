@@ -125,6 +125,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_share_string:
                 Intent intentShareString = new Intent(this, ShareString.class);
                 startActivity(intentShareString);
+            case R.id.nav_person:
+                Intent intentAddPerson = new Intent(this, AddPerson.class);
+                startActivity(intentAddPerson);
         }
         return super.onOptionsItemSelected(item);
     }
