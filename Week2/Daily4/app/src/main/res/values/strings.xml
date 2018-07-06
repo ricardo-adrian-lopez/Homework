@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Week2Daily4</string>
+    <string name="nav_camera">Take a picture</string>
+    <string name="nav_share">Share with others</string>
+    <string name="nav_call">Call a number</string>
+    <string name="nav_home">Home</string>
+    <string name="main_welcome">Welcome! Please select an activity from the navigation menu</string>
+    <string name="nav_drawer_opened">drawer opened</string>
+    <string name="nav_drawer_closed">drawer closed</string>
+    <string name="btn_picture">Take picture...</string>
+    <string name="btn_add_event">Add event...</string>
+    <string name="add_person_firstname">Enter firstname</string>
+    <string name="add_person_lastname">Enter lastname</string>
+    <string name="add_person_company">Enter company name</string>
+    <string name="add_person_save">Save person</string>
+    <string name="add_person_show">Show list</string>
+    <string name="list_person_back">Back to add person</string>
+</resources>
