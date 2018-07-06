@@ -5,4 +5,6 @@
     <string name="nav_call">Call a number</string>
     <string name="nav_home">Home</string>
     <string name="main_welcome">Welcome! Please select an activity from the navigation menu</string>
+    <string name="nav_drawer_opened">drawer opened</string>
+    <string name="nav_drawer_closed">drawer closed</string>
 </resources>
