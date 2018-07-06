@@ -118,6 +118,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 Intent intentPicture = new Intent(this, PictureActivity.class);
                 startActivity(intentPicture);
                 return true;
+            case R.id.nav_phone:
+                Intent intentPhone =  new Intent(this,CallNumber.class);
+                startActivity(intentPhone);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
