@@ -122,6 +122,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 Intent intentPhone =  new Intent(this,CallNumber.class);
                 startActivity(intentPhone);
                 return true;
+            case R.id.nav_share_string:
+                Intent intentShareString = new Intent(this, ShareString.class);
+                startActivity(intentShareString);
         }
         return super.onOptionsItemSelected(item);
     }
