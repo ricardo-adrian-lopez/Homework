@@ -41,7 +41,11 @@
         <activity
             android:name=".ListPerson"
             android:label="List person"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".EMICalculator"
+            android:label="Seekbar"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
     </application>
 
 </manifest>

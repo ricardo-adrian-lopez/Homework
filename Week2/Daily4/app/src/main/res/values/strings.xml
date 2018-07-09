@@ -15,4 +15,6 @@
     <string name="add_person_save">Save person</string>
     <string name="add_person_show">Show list</string>
     <string name="list_person_back">Back to add person</string>
+    <string name="emi_hint">Please select the desired amount of loan at a rate interest of 12% annually for 24 months</string>
+    <string name="calculate_emi">Calculate EMI</string>
 </resources>
