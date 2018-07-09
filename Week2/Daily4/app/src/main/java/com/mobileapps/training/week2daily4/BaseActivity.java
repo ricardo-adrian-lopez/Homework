@@ -128,6 +128,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_person:
                 Intent intentAddPerson = new Intent(this, AddPerson.class);
                 startActivity(intentAddPerson);
+            case R.id.nav_emi:
+                Intent intentSeekbar =  new Intent(this, EMICalculator.class);
+                startActivity(intentSeekbar);
         }
         return super.onOptionsItemSelected(item);
     }
