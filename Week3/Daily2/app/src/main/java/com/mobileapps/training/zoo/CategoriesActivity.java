@@ -1,5 +1,6 @@
 package com.mobileapps.training.zoo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,7 @@ public class CategoriesActivity extends AppCompatActivity {
 
         lvCategories = findViewById(R.id.lvCategories);
         localDataSource = new LocalDataSource(this);
-        List<String> listCategories = localDataSource.getAllCategories();
+        final List<String> listCategories = localDataSource.getAllCategories();
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listCategories);
         lvCategories.setAdapter(adapter);
@@ -36,7 +37,9 @@ public class CategoriesActivity extends AppCompatActivity {
         lvCategories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Intent intent = new Intent(CategoriesActivity.this,RecyclerActivity.class);
+                intent.putExtra("category",listCategories.get(position));
+                startActivity(intent);
             }
         });
     }

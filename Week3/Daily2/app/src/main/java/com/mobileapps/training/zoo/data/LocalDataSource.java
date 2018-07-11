@@ -44,6 +44,25 @@ public class LocalDataSource extends SQLiteOpenHelper {
         return listCategories;
     }
 
+    public List<Animal> getAnimalCard(String categoryName){
+        Log.d(TAG, "getAnimalCard: Retrieving Animals ");
+        SQLiteDatabase database = getWritableDatabase();
+        List<Animal> list = new ArrayList<>();
+        String query = LocalDataContract.DML.GET_ANIMAL_CARD + "\"" +categoryName;
+        Log.d(TAG, "getAnimalCard: SQL: " + query);
+        Cursor cursor = database.rawQuery(query,null);
+
+        if(cursor.moveToFirst()){
+            do{
+                Animal animal = new Animal();
+                animal.setName(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.NAME)));
+                animal.setImage(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.IMAGE)));
+                list.add(animal);
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
+
     public void init() {
 
         //Mammals

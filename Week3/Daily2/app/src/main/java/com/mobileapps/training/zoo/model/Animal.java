@@ -20,6 +20,10 @@ public class Animal {
         this.image = urlImage;
     }
 
+    public Animal() {
+
+    }
+
     public String getImage() {
         return image;
     }
