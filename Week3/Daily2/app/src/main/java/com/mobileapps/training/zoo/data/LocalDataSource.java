@@ -48,19 +48,39 @@ public class LocalDataSource extends SQLiteOpenHelper {
         Log.d(TAG, "getAnimalCard: Retrieving Animals ");
         SQLiteDatabase database = getWritableDatabase();
         List<Animal> list = new ArrayList<>();
-        String query = LocalDataContract.DML.GET_ANIMAL_CARD + "\"" +categoryName;
+        String query = LocalDataContract.DML.GET_ANIMAL_CARD + "\"" +categoryName+"\"";
         Log.d(TAG, "getAnimalCard: SQL: " + query);
         Cursor cursor = database.rawQuery(query,null);
 
         if(cursor.moveToFirst()){
             do{
                 Animal animal = new Animal();
+                animal.setId(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.ID)));
                 animal.setName(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.NAME)));
                 animal.setImage(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.IMAGE)));
+                animal.setWeight(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.WEIGHT)));
                 list.add(animal);
             }while (cursor.moveToNext());
         }
         return list;
+    }
+
+    public Animal getAnimal(String id){
+        Log.d(TAG, "getAnimal: Retrieving animal");
+        SQLiteDatabase database = getWritableDatabase();
+        Animal animal = new Animal();
+        String query = LocalDataContract.DML.GET_ANIMAL_ID + "\"" +id+"\"";
+        Cursor cursor = database.rawQuery(query,null);
+        if(cursor.moveToFirst()){
+            animal.setId(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.ID)));
+            animal.setName(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.NAME)));
+            animal.setImage(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.IMAGE)));
+            animal.setAge(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.AGE)));
+            animal.setCategory(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.CATEGORY)));
+            animal.setGender(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.GENDER)));
+            animal.setWeight(cursor.getString(cursor.getColumnIndex(LocalDataContract.Animal.WEIGHT)));
+        }
+        return animal;
     }
 
     public void init() {

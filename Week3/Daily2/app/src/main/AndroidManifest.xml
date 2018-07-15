@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CategoriesActivity" />
-        <activity android:name=".RecyclerActivity"></activity>
+        <activity android:name=".RecyclerActivity" />
+        <activity android:name=".AnimalDetailsActivity"></activity>
     </application>
 
 </manifest>

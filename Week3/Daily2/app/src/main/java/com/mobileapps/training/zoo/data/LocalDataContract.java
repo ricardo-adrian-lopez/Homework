@@ -32,6 +32,6 @@ public class LocalDataContract {
     public static class DML {
         public static final String GET_CATEGORIES = "SELECT DISTINCT category AS category FROM animal ORDER BY category DESC";
         public static final String GET_ANIMAL_ID =  "SELECT * FROM animal WHERE id=";
-        public static final String GET_ANIMAL_CARD = "SELECT name AS name, image AS image FROM animal WHERE category = ";
+        public static final String GET_ANIMAL_CARD = "SELECT id as id, name AS name, image AS image, weight as weight FROM animal WHERE category = ";
     }
 }
