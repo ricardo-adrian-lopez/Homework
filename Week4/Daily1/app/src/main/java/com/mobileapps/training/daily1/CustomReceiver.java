@@ -32,9 +32,6 @@ public class CustomReceiver extends BroadcastReceiver {
             case ConnectivityManager.CONNECTIVITY_ACTION:
                 Log.d(TAG, "onReceive: Connectivity changed");
                 Toast.makeText(context, "Wifi changed", Toast.LENGTH_SHORT).show();
-
-
-
         }
     }
 }
