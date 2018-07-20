@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TestFriday</string>
+    <string name="insert_acronym">Insert acronym</string>
 </resources>
