@@ -7,6 +7,10 @@ import android.os.Message;
 import android.util.Log;
 
 import com.mobileapps.training.daily3.model.Profile;
+import com.mobileapps.training.daily3.model.Repo;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,10 +43,19 @@ public class ProfileHelper {
         return service.getProfile(authToken);
     }
 
+    public Call<List<Repo>> getProfileRepos(String authToken){
+        Retrofit retrofit = createClient();
+        Service service = retrofit.create(Service.class);
+        return service.getProfileRepos(authToken);
+    }
+
     interface Service{
 
         @GET("users/ricardo-adrian-lopez")
         Call<Profile> getProfile(@Header("Authorization")String authToken);
+
+        @GET("users/ricardo-adrian-lopez/repos")
+        Call<List<Repo>> getProfileRepos(@Header("Authorization") String authToken);
     }
 
     public void makeAsyncCall(final Context context, String authToken){
@@ -61,6 +74,27 @@ public class ProfileHelper {
             @Override
             public void onFailure(Call<Profile> call, Throwable t) {
                 Log.d(TAG, "onFailure: " + t.toString());
+            }
+        });
+    }
+
+    public void makeAsyncCallRepos(String authToken){
+        Log.d(TAG, "makeAsyncCallRepos: ");
+        getProfileRepos(authToken).enqueue(new Callback<List<Repo>>() {
+            @Override
+            public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
+                ArrayList<Repo> repos = (ArrayList<Repo>) response.body();
+                Log.d(TAG, "onResponse: " + repos);
+                Message message = new Message();
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList("repos",repos);
+                message.setData(bundle);
+                handler.sendMessage(message);
+            }
+
+            @Override
+            public void onFailure(Call<List<Repo>> call, Throwable t) {
+
             }
         });
     }

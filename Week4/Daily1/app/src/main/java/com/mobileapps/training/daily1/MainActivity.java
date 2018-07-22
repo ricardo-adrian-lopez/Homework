@@ -73,6 +73,20 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    public void onClickSendStickyBroadcast(View view) {
+        Log.d(TAG, "onClickSendStickyBroadcast: Sending sticky broadcast");
+        Intent intent = new Intent("com.training.mobileapps.sticky");
+        intent.putExtra("firstAnimal",animalList.get(0).getName());
+        sendStickyBroadcast(intent);
+    }
+
+    public void onClickSendOrderedBroadcast(View view) {
+        Log.d(TAG, "onClickSendOrderedBroadcast: Sending ordered broadcast");
+        Intent intent = new Intent("com.training.mobileapps.ordered");
+        intent.putExtra("firstAnimal",animalList.get(0).getName());
+        sendOrderedBroadcast(intent,null);
+    }
+
     public class AnimalListReceiver extends BroadcastReceiver{
 
         @Override
