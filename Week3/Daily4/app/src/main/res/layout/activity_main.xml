@@ -7,17 +7,45 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Service Foreground buttons" />
 
     <Button
         android:id="@+id/btnStart"
-        android:text="Start service"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Start service" />
 
 
     <Button
         android:id="@+id/btnStop"
-        android:text="Stop service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop service" />
+
+    <TextView
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AlarmManager and JobScheduler" />
+
+    <Button
+        android:text="AlarmManager(30 secs)"
+        android:id="@+id/btnAlarm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:text="JobScheduler(30 secs)"
+        android:id="@+id/btnJob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
