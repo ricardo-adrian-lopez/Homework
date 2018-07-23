@@ -32,12 +32,12 @@ public class SoundService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, "onStartCommand: Activating sound");
-        
         if("STOP".equals(intent.getAction())){
             Log.d(TAG, "onStartCommand: Stopped service");
             onDestroy();
         }
+
+        Log.d(TAG, "onStartCommand: Activating sound");
         mediaPlayer = MediaPlayer.create(this, Settings.System.DEFAULT_NOTIFICATION_URI);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();

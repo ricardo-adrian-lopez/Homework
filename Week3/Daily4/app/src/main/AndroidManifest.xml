@@ -21,6 +21,12 @@
             android:name=".SoundService"
             android:enabled="true"
             android:exported="true"></service>
+
+        <service
+            android:name=".MyJob"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>
