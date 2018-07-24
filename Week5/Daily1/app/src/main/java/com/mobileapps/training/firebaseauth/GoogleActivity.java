@@ -35,6 +35,7 @@ public class GoogleActivity extends AppCompatActivity implements View.OnClickLis
 
     private Button signOutButton;
     private Button btnFacebook;
+    private Button btnTwitter;
 
     private FirebaseAuth mAuth;
 
@@ -49,10 +50,12 @@ public class GoogleActivity extends AppCompatActivity implements View.OnClickLis
         signInButton = findViewById(R.id.sign_in_button);
         signOutButton = findViewById(R.id.sign_out_button);
         btnFacebook = findViewById(R.id.btnFacebook);
+        btnTwitter = findViewById(R.id.btnTwitter);
 
         signInButton.setOnClickListener(this);
         signOutButton.setOnClickListener(this);
         btnFacebook.setOnClickListener(this);
+        btnTwitter.setOnClickListener(this);
 
         // Views
         mStatusTextView = findViewById(R.id.tvStatus);
@@ -158,6 +161,10 @@ public class GoogleActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btnFacebook:
                 Intent facebookIntent = new Intent(GoogleActivity.this, FacebookActivity.class);
                 startActivity(facebookIntent);
+                break;
+            case R.id.btnTwitter:
+                Intent intent = new Intent(GoogleActivity.this, TwitterActivity.class);
+                startActivity(intent);
                 break;
         }
     }
