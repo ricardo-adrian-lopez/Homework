@@ -24,16 +24,17 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class GoogleActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 2;
 
     private SignInButton signInButton;
     private GoogleSignInOptions gso;
     private GoogleSignInClient mGoogleSignInClient;
-    private GoogleSignInAccount account;
+
     private Button signOutButton;
+    private Button btnFacebook;
 
     private FirebaseAuth mAuth;
 
@@ -47,12 +48,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         signInButton = findViewById(R.id.sign_in_button);
         signOutButton = findViewById(R.id.sign_out_button);
+        btnFacebook = findViewById(R.id.btnFacebook);
+
         signInButton.setOnClickListener(this);
         signOutButton.setOnClickListener(this);
+        btnFacebook.setOnClickListener(this);
 
         // Views
         mStatusTextView = findViewById(R.id.tvStatus);
         mDetailTextView = findViewById(R.id.tvDetail);
+
 
         // Configure Google Sign In
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -78,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mDetailTextView.setText("Firebase: " + user.getUid());
 
             signInButton.setVisibility(View.GONE);
+            btnFacebook.setVisibility(View.GONE);
             signOutButton.setVisibility(View.VISIBLE);
         }else {
             mStatusTextView.setText(R.string.signed_out);
@@ -85,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             signInButton.setVisibility(View.VISIBLE);
             signOutButton.setVisibility(View.GONE);
+            btnFacebook.setVisibility(View.VISIBLE);
         }
     }
 
@@ -124,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();                            updateView(null);
+                            Toast.makeText(GoogleActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();                            updateView(null);
                         }
                     }
                 });
@@ -132,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        Log.d(TAG, "onClick: ");
         switch (v.getId()){
             case R.id.sign_in_button:
                 Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -146,6 +154,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 updateView(null);
                             }
                         });
+                break;
+            case R.id.btnFacebook:
+                Intent facebookIntent = new Intent(GoogleActivity.this, FacebookActivity.class);
+                startActivity(facebookIntent);
                 break;
         }
     }

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">FirebaseAuth</string>
     <string name="signed_out">Signed out</string>
+
+    <string name="facebook_app_id">1858456071114616</string>
+    <string name="fb_login_protocol_scheme">fb1858456071114616</string>
+
 </resources>
