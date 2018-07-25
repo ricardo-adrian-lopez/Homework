@@ -32,6 +32,11 @@ dependencies {
 
     //Facebook
     implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+
+    // Twitter Android SDK (only required for Twitter Login)
+    implementation 'com.twitter.sdk.android:twitter-core:3.1.1'
+    implementation 'com.twitter.sdk.android:twitter:3.1.1'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
