@@ -3,6 +3,7 @@
     package="com.mobileapps.training.daily4usage">
 
     <uses-permission android:name="com.mobileapps.training.permission.READ_PROVIDER" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
