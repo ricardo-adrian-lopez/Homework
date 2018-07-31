@@ -8,7 +8,7 @@ public interface SearchContract {
 
         void showLocation(double latitude, double longitude, float zoom);
 
-        void searchLocation(Address address);
+        void searchLocation(Address address, float zoom);
 
         void showToastMessage(String message);
     }

@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -60,6 +61,20 @@ public class SearchPresenter implements SearchContract.ForwardInteractionToPrese
 
     @Override
     public void getAddressFromText(String text) {
+        Log.d(TAG, "getAddressFromText: Geolocating");
+        Geocoder geocoder = new Geocoder(context);
+        List<Address> addressList = new ArrayList<>();
 
+        try {
+            addressList = geocoder.getFromLocationName(text,1);
+            if(addressList.size() > 0){
+                Address address = addressList.get(0);
+                Log.d(TAG, "getAddressFromText: Found Location Requested: " + address.toString());
+                publishToView.searchLocation(address, DEFAULT_ZOOM);
+            }
+        }catch (IOException e){
+            Log.d(TAG, "getAddressFromText: IOException: " + e.getMessage());
+            publishToView.showToastMessage("Could not find location");
+        }
     }
 }
