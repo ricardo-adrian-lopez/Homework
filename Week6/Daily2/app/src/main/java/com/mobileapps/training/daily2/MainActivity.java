@@ -1,5 +1,6 @@
 package com.mobileapps.training.daily2;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,7 @@ import android.widget.EditText;
 
 import com.mobileapps.training.daily2.custom.LoginCompositeView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "MainActivity";
 
@@ -64,10 +65,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mEditor.putString(this.getString(R.string.etname), mName.getText().toString());
             mEditor.putString(this.getString(R.string.etpassword), mPassword.getText().toString());
             mEditor.commit();
+
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+
         } else {
             Log.d(TAG, "onClick: Not saving login information");
             mEditor.putString(this.getString(R.string.checkbox), "FALSE");
             mEditor.commit();
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+
         }
     }
 }
