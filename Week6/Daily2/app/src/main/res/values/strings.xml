@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Daily2</string>
+
+    <string name="checkbox">com.mobileapps.login.checkbox</string>
+    <string name="etname">com.mobileapps.login.name</string>
+    <string name="etpassword">com.mobileapps.login.password</string>
+
+</resources>
