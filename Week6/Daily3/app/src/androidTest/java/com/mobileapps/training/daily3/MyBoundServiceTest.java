@@ -17,7 +17,6 @@ import java.util.concurrent.TimeoutException;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(AndroidJUnit4.class)
-@MediumTest
 public class MyBoundServiceTest {
 
 
